@@ -2,17 +2,22 @@
 include "talenthubconnect.php";
 $sql=mysqli_query($con,'select * from college');
 if (isset($_POST['submit'])){
-    $titil=$_POST['titile'];
-    $des=$_POST['content'];
-    mysqli_query($con,"insert into notification(titile,content)values('$titil','$des')");
-
+    $username=$_POST['user_name'];
+    $password=$_POST['password'];
+    $type=$_POST['type'];
+    $data=mysqli_query($con,"select * from login where USER_NAME='$username' and PASSWORD='$password'");
+if(mysqli_num_rows($data)>0){
+  header("location:college.php");
 }
+}
+
+
 function data_uri ($file, $mime) {
     $contents = file_get_contents ($file);
     $base64 = base64_encode ($contents);
     return ('data:' . $mime . ';base64,' . $base64);
   }
-  
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -25,7 +30,7 @@ function data_uri ($file, $mime) {
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>SB Admin 2 - Provide Notification</title>
+    <title>SB Admin 2 - add department</title>
 
     <!-- Custom fonts for this template-->
     <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
@@ -45,30 +50,31 @@ function data_uri ($file, $mime) {
         <div class="card o-hidden border-0 shadow-lg my-5">
             <div class="card-body p-0">
                 <!-- Nested Row within Card Body -->
- 
-</div>
-
                 <div class="row">
-                    <div class="col-lg-5 d-none d-lg-block">
-                        <img src="<?php echo data_uri ('d:\xampp\htdocs\task\images\521437105.png','image/png'); ?>" height="317px" width="470px" alt="An imag"/></div>
+                    <div class="col-lg-5 d-none d-lg-block"><img src="<?php echo data_uri ('d:\xampp\htdocs\task\images\Screenshot (5).png','image/png'); ?>" height="417px" width="470px" alt="An imag"/></div>
                     <div class="col-lg-7">
                         <div class="p-5">
                             <div class="text-center">
-                                <h1 class="h4 text-gray-900 mb-4">Provide Notification</h1>
+                                <h1 class="h4 text-gray-900 mb-4">Login</h1>
                             </div>
                             <form class="user" method="post">
                                 <div class="form-group row">
                                 <input type="text" class="form-control form-control-user" id="exampleInputEmail"
-                                        placeholder="Titile" name="titile">
+                                        placeholder="user name" name="user_name">
                                 </div>
-                                   
                                 <div class="form-group row">
                                 <input type="text" class="form-control form-control-user" id="exampleInputEmail"
-                                        placeholder="Description" name="content">
+                                        placeholder="password" name="password">
                                 </div>
+                                <div class="form-group row">
+                                <input type="text" class="form-control form-control-user" id="exampleInputEmail"
+                                        placeholder="type" name="type">
+                                </div>
+                                
+                                        
                                     <tr>
                                         <td>
-                                <button name="submit" class="btn btn-outline-primary">Add</button>               
+                                <button name="submit" class="btn btn-outline-primary" text="center">login</button>               
                                  <a href="students.php" name="submit" class="btn btn-outline-primary">Back</a>  
                     </td>
                 </tr>
@@ -80,7 +86,6 @@ function data_uri ($file, $mime) {
                 </div>
             </div>
         </div>
-
 
     </div>
 

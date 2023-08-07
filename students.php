@@ -1,6 +1,6 @@
 <?php
 include "talenthubconnect.php";
-$data= mysqli_query($con,"select * from students join department on department.department_id=students.student_id ");
+$data= mysqli_query($con,"select * from students students join department");
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -261,11 +261,11 @@ $data= mysqli_query($con,"select * from students join department on department.d
                                         <tr>
                                             
                                             <th>College_id</th>
-                                            <th>Department_id</th>
+                                            <th>Department_name</th>
                                             <th>Name</th>
                                             <th>Email</th>
-                                            <th>Mobile</th>
-                                            <th>Age</th>
+                                            <th>Update</th>
+                                            <th>Detele</th>
                                            
                                         </tr>
                                     </thead>
@@ -279,8 +279,8 @@ $data= mysqli_query($con,"select * from students join department on department.d
                                                     <td><?php echo$row['department_name']?></td>
                                                     <td><?php echo$row['name']?></td>
                                                     <td><?php echo$row['email']?></td>
-                                                    <td><?php echo$row['mobile']?></td>
-                                                    <td><?php echo$row['age']?></td>
+                                                    <td><button name="submit" class="btn btn-outline-primary">Update</button></td>
+                                                    <td><a href="studentdelete.php?id=<?php echo$row['college_id']?>" name="delete" class="btn btn-outline-primary">Delete</a></td>
                                                 </tr>
                                                     <?php
                                                 }

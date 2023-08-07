@@ -1,9 +1,7 @@
 <?php
 include "talenthubconnect.php";
-$data=mysqli_query($con,"select * from college");
+$data= mysqli_query($con,"select * from category ");
 ?>
-
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -15,7 +13,7 @@ $data=mysqli_query($con,"select * from college");
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>SB Admin 2 - Buttons</title>
+    <title>SB usercategory</title>
 
     <!-- Custom fonts for this template-->
     <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
@@ -34,11 +32,9 @@ $data=mysqli_query($con,"select * from college");
     <div id="wrapper">
 
         <!-- Sidebar -->
-    
-<?php
-include "sidebar.php";
-?>
-        
+        <?php
+        include "usersidebar.php";
+        ?>
         <!-- End of Sidebar -->
 
         <!-- Content Wrapper -->
@@ -255,63 +251,51 @@ include "sidebar.php";
                 <div class="container-fluid">
 
                     <!-- Page Heading -->
-                    <h1 class="h3 mb-4 text-gray-800">View college</h1>
-
+                    <h1 class="h3 mb-1 text-gray-800">Student view</h1>
+   
                     </div>
                         <div class="card-body">
                             <div class="table-responsive">
                                 <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                                     <thead>
                                         <tr>
-                                        <th>College name</th>
-                                            <th>Place</th>
-                                            <th>Email</th>
-                                            <th>Mobile</th>
-                                       
-                                            <th>Action</th>
                                             
+                                           
+                                            <th>Category_id</th>
+                                            <th>category_Name</th>
                                             
                                         </tr>
                                     </thead>
                                     <tfoot>
-                                        <tr>
-                                       
-</tr>
-                                            <?php
-                                            while($row=mysqli_fetch_assoc($data)){
-                                                ?>
-<tr>
-                                                <td><?php echo$row['college_name']?></td>
-                                                <td><?php echo$row['Place']?></td>
-                                                <td><?php echo$row['email']?></td>
-                                                <td><?php echo$row['mobile']?></td>
-                                                
-                                                <td><a href="" name="submit" type="button" class="btn btn-outline-dark">Approve</a></td>
+                                            <tr>
+                                                <?php
+                                                while($row=mysqli_fetch_assoc($data)){
+                                                    ?>
+                                                <tr>
+                                                    
+                                                    <td><?php echo$row['category_id']?></td>
+                                                    <td><?php echo$row['category_name']?></td>
+                                                    
                                                 </tr>
-                                               <?php
-                                            }
-                                            ?>
-                                           
-                                 
-                                    </tfoot>
-                                    <tbody>
-                                        <tr>
-                                            <td>
-                                                
-                                            </td>
-                                        </tr>
-                                        
+                                                    <?php
+                                                }
+                                                ?>
+                                            
                                     </tbody>
+                                    
                                 </table>
+                                
                             </div>
                         </div>
                     </div>
+                    <a href="user.php" name="submit" class="btn btn-outline-primary">back</a>   
 
                 </div>
                 <!-- /.container-fluid -->
 
             </div>
             <!-- End of Main Content -->
+
 
 
 

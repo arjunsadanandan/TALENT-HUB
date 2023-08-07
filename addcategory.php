@@ -1,17 +1,13 @@
 <?php
 include "talenthubconnect.php";
-$sql=mysqli_query($con,'select * from college');
+$sql=mysqli_query($con,'select * from category');
 if (isset($_POST['submit'])){
-    $titil=$_POST['titile'];
-    $des=$_POST['content'];
-    mysqli_query($con,"insert into notification(titile,content)values('$titil','$des')");
+   
+    $categoryname=$_POST['category_name'];
+    mysqli_query($con,"insert into category(category_name)values('$categoryname')");
 
 }
-function data_uri ($file, $mime) {
-    $contents = file_get_contents ($file);
-    $base64 = base64_encode ($contents);
-    return ('data:' . $mime . ';base64,' . $base64);
-  }
+
   
 ?>
 <!DOCTYPE html>
@@ -25,7 +21,7 @@ function data_uri ($file, $mime) {
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>SB Admin 2 - Provide Notification</title>
+    <title>SB Admin 2 - ADD CATEGORY</title>
 
     <!-- Custom fonts for this template-->
     <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
@@ -49,27 +45,24 @@ function data_uri ($file, $mime) {
 </div>
 
                 <div class="row">
-                    <div class="col-lg-5 d-none d-lg-block">
-                        <img src="<?php echo data_uri ('d:\xampp\htdocs\task\images\521437105.png','image/png'); ?>" height="317px" width="470px" alt="An imag"/></div>
-                    <div class="col-lg-7">
+                    
+                    
                         <div class="p-5">
                             <div class="text-center">
-                                <h1 class="h4 text-gray-900 mb-4">Provide Notification</h1>
+                                <h1 class="h4 text-gray-900 mb-4">ADD CATEGORY</h1>
                             </div>
                             <form class="user" method="post">
+                        
+                            
+                                
                                 <div class="form-group row">
                                 <input type="text" class="form-control form-control-user" id="exampleInputEmail"
-                                        placeholder="Titile" name="titile">
-                                </div>
-                                   
-                                <div class="form-group row">
-                                <input type="text" class="form-control form-control-user" id="exampleInputEmail"
-                                        placeholder="Description" name="content">
-                                </div>
+                                        placeholder="category_name" name="category_name">
+                                </div>                       
                                     <tr>
                                         <td>
                                 <button name="submit" class="btn btn-outline-primary">Add</button>               
-                                 <a href="students.php" name="submit" class="btn btn-outline-primary">Back</a>  
+                                 <a href="user.php" name="submit" class="btn btn-outline-primary">Back</a>  
                     </td>
                 </tr>
                     </div>
@@ -79,9 +72,7 @@ function data_uri ($file, $mime) {
                     </div>
                 </div>
             </div>
-        </div>
-
-
+      
     </div>
 
     <!-- Bootstrap core JavaScript-->

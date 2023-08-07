@@ -263,11 +263,7 @@ include "sidebar.php";
                                 <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                                     <thead>
                                         <tr>
-                                        <th>College name</th>
-                                            <th>Place</th>
-                                            <th>Email</th>
-                                            <th>Mobile</th>
-                                       
+                                        <th>college</th>
                                             <th>Action</th>
                                             
                                             
@@ -282,11 +278,9 @@ include "sidebar.php";
                                                 ?>
 <tr>
                                                 <td><?php echo$row['college_name']?></td>
-                                                <td><?php echo$row['Place']?></td>
-                                                <td><?php echo$row['email']?></td>
-                                                <td><?php echo$row['mobile']?></td>
                                                 
-                                                <td><a href="" name="submit" type="button" class="btn btn-outline-dark">Approve</a></td>
+                                                
+                                                <td><a href="students.php?id=<?php echo$row['college_name']?><?php echo$row['college_id']?>" name="submit" type="button" class="btn btn-outline-dark">view</a></td>
                                                 </tr>
                                                <?php
                                             }
