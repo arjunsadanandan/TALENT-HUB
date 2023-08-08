@@ -1,6 +1,6 @@
 <?php
 include "talenthubconnect.php";
-$data= mysqli_query($con,"select * from students students join department");
+$data= mysqli_query($con,"select * from students students join department on department.department_id=students.student_id ");
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -265,7 +265,7 @@ $data= mysqli_query($con,"select * from students students join department");
                                             <th>Name</th>
                                             <th>Email</th>
                                             <th>Update</th>
-                                            <th>Detele</th>
+                                            <th>Delete</th>
                                            
                                         </tr>
                                     </thead>
