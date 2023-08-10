@@ -5,7 +5,7 @@
     <div class="sidebar-brand-icon rotate-n-15">
         <i class="fas fa-laugh-wink"></i>
     </div>
-    <div class="sidebar-brand-text mx-3">SB User <sup>2</sup></div>
+    <div class="sidebar-brand-text mx-3">SB Admin <sup>2</sup></div>
 </a>
 
 <!-- Divider -->
@@ -57,12 +57,12 @@
     <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsePages"
         aria-expanded="true" aria-controls="collapsePages">
         <i class="fas fa-fw fa-folder"></i>
-        <span>Update/Delete Work</span>
+        <span>College View</span>
     </a>
     <div id="collapsePages" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
         <div class="bg-white py-2 collapse-inner rounded">
             <h6 class="collapse-header">View Screens:</h6>
-            <a class="collapse-item" href="viewproduct.php">View Work</a>
+            <a class="collapse-item" href="admincollegeview.php">Approve College</a>
         </div>
     </div>
 </li>
@@ -71,30 +71,31 @@
 
 </li>
 <li class="nav-item">
-    <a class="nav-link" href="viewproduct.php">
+    <a class="nav-link" href="adminstudent.php">
         <i class="fas fa-fw fa-chart-area"></i>
-        <span>View Product</span></a>
+        <span>Student View</span></a>
+        <li class="nav-item">
+    <a class="nav-link" href="adminaddcategory.php">
+        <i class="fas fa-fw fa-chart-area"></i>
+        <span>Add Category</span></a>
 </li>
 <li class="nav-item">
-    <a class="nav-link" href="product.php">
+    <a class="nav-link" href="adminviewcategory.php">
         <i class="fas fa-fw fa-chart-area"></i>
-        <span>Add Product</span></a>
+        <span>view Category</span></a>
+</li>
 </li>
 <li class="nav-item">
-    <a class="nav-link" href="department.php">
+    <a class="nav-link" href="adminviewproduct.php">
         <i class="fas fa-fw fa-chart-area"></i>
-        <span>By Product</span></a>
+        <span>View Approve Work</span></a>
 </li>
 
-<li class="nav-item">
-    <a class="nav-link" href="viewproduct.php">
-        <i class="fas fa-fw fa-chart-area"></i>
-        <span>View All Work</span></a>
 <!-- Nav Item - Tables -->
 <li class="nav-item">
-    <a class="nav-link" href="viewnotification.php">
+    <a class="nav-link" href="adminnotification.php">
         <i class="fas fa-fw fa-table"></i>
-        <span>View notification</span></a>
+        <span>Provide Notification</span></a>
 </li>
 
 <!-- Divider -->
@@ -103,6 +104,9 @@
 <!-- Sidebar Toggler (Sidebar) -->
 <div class="text-center d-none d-md-inline">
     <button class="rounded-circle border-0" id="sidebarToggle"></button>
+</div>
+<div class="text-center d-none d-md-inline">
+    <a href="module.php" class="btn btn-outline-prymary" name="submit" type="button">Back</a>
 </div>
 
 <!-- Sidebar Message -->

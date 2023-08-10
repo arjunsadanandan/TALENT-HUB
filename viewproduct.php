@@ -1,6 +1,6 @@
 <?php
 include "talenthubconnect.php";
-$data= mysqli_query($con,"select * from product join category on category.category_id=product.product_id");
+$data= mysqli_query($con,"select * from product join students on students.student_id=product_id join category");
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -13,7 +13,7 @@ $data= mysqli_query($con,"select * from product join category on category.catego
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>SB Admin 2 - Color Utilities</title>
+    <title>SB user - view product</title>
 
     <!-- Custom fonts for this template-->
     <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
@@ -33,7 +33,7 @@ $data= mysqli_query($con,"select * from product join category on category.catego
 
         <!-- Sidebar -->
         <?php
-        include "usersidebar.php";
+        include "adminsidebar.php";
         ?>
         <!-- End of Sidebar -->
 
@@ -260,12 +260,15 @@ $data= mysqli_query($con,"select * from product join category on category.catego
                                     <thead>
                                         <tr>
                                             
-                                            <th>Student_id</th>
+                                            <th>Student_name</th>
                                             <th>Category_name</th>
                                             <th>Product_Name</th>
                                             <th>Price</th>
-                                            <th>Status</th>
+                                          
                                             <th>Image</th>
+                                         
+                                            <th>Delete</th>
+                                         
                                            
                                         </tr>
                                     </thead>
@@ -275,13 +278,13 @@ $data= mysqli_query($con,"select * from product join category on category.catego
                                                 while($row=mysqli_fetch_assoc($data)){
                                                     ?>
                                                 <tr>
-                                                    <td><?php echo$row['student_id']?></td>
+                                                    <td><?php echo$row['student_name']?></td>
                                                     <td><?php echo$row['category_name']?></td>
                                                     <td><?php echo$row['product_name']?></td>
                                                     <td><?php echo$row['price']?></td>
-                                                    <td><?php echo$row['status']?></td>
-                                                    
                                                     <td><img src="img/<?php echo$row['image']?>"width="30px" hieght="30px"></td>
+                                                   
+                                                    <td><a href="productdelete.php?id=<?php echo$row["product_id"]?>" type="button" name="submit" class="btn btn-outline-primary">Delete</a></td>
                                                 </tr>
                                                     <?php
                                                 }

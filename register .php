@@ -25,7 +25,7 @@ function data_uri ($file, $mime) {
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>SB Admin 2 - Provide Notification</title>
+    <title>SB user - Provide Notification</title>
 
     <!-- Custom fonts for this template-->
     <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
@@ -69,7 +69,7 @@ function data_uri ($file, $mime) {
                                     <tr>
                                         <td>
                                 <button name="submit" class="btn btn-outline-primary">Add</button>               
-                                 <a href="students.php" name="submit" class="btn btn-outline-primary">Back</a>  
+                                 <a href="user.php" name="submit" class="btn btn-outline-primary">Back</a>  
                     </td>
                 </tr>
                     </div>

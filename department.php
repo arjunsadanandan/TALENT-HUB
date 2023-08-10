@@ -23,7 +23,7 @@ function data_uri ($file, $mime) {
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>SB Admin 2 - add department</title>
+    <title>SB user - add department</title>
 
     <!-- Custom fonts for this template-->
     <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
@@ -48,7 +48,7 @@ function data_uri ($file, $mime) {
                     <div class="col-lg-7">
                         <div class="p-5">
                             <div class="text-center">
-                                <h1 class="h4 text-gray-900 mb-4">Department Name</h1>
+                                <h1 class="h4 text-gray-900 mb-4">Departments</h1>
                             </div>
                             <form class="user" method="post">
                                 <div class="form-group row">
@@ -57,7 +57,12 @@ function data_uri ($file, $mime) {
                                 </div>
                                         <div class="form-group row">
                          
-                        <select name="college_id" class="form-control form-control-user" >                       
+                        <tr>
+                        <td>
+                        <label for name="college_id">College Name</label>
+                        </td>
+                        <td>  
+                        <select name="college_id" >                    
                         <?php
                         while($data=mysqli_fetch_assoc($sql)){
                             ?>
@@ -66,12 +71,13 @@ function data_uri ($file, $mime) {
                         }
                         ?>
                      </select>
+                    </tr>
                     
                                     </div>
                                     <tr>
                                         <td>
                                 <button name="submit" class="btn btn-outline-primary">Add</button>               
-                                 <a href="students.php" name="submit" class="btn btn-outline-primary">Back</a>  
+                                 <a href="user.php" name="submit" class="btn btn-outline-primary">Back</a>  
                     </td>
                 </tr>
                     </div>

@@ -1,6 +1,6 @@
 <?php
 include "talenthubconnect.php";
-$sql=mysqli_query($con,'select * from product join category on category.category_id=product.product_id');
+$sql=mysqli_query($con,'select * from category ');
 if (isset($_POST['submit'])){
     $student=$_POST['student_id'];
     $category=$_POST['category_id'];
@@ -16,7 +16,7 @@ if (isset($_POST['submit'])){
         move_uploaded_file($_FILES['image']['tmp_name'],"img/".$filenew);
     }
     mysqli_query($con,"insert into product(student_id,category_id,product_name,price,status,image)values('$student','$category','$product','$price','$status','$filenew')");
-
+    header("location:viewproduct.php");
 }
 
   
@@ -32,7 +32,7 @@ if (isset($_POST['submit'])){
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>SB Admin 2 - ADD PRODUCT</title>
+    <title>SB user - ADD PRODUCT</title>
 
     <!-- Custom fonts for this template-->
     <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">

@@ -1,13 +1,13 @@
 <?php
 include "talenthubconnect.php";
-$sql=mysqli_query($con,'select * from login');
+$sql=mysqli_query($con,'select * from college');
 if (isset($_POST['submit'])){
     $username=$_POST['user_name'];
     $password=$_POST['password'];
     $type=$_POST['type'];
-    $data=mysqli_query($con,"select * from login where USER_NAME='$username' , PASSWORD='$password'AND type='$type'");
+    $data=mysqli_query($con,"select * from login where USER_NAME='$username' and PASSWORD='$password'");
 if(mysqli_num_rows($data)>0){
-  header("location:adminlogin.php");
+  header("location:college.php");
 }
 }
 
@@ -74,8 +74,8 @@ function data_uri ($file, $mime) {
                                         
                                     <tr>
                                         <td>
-                                <button name="submit" class="btn btn-outline-primary" text="center">login</button>               
-                                 <a href="students.php" name="submit" class="btn btn-outline-primary">Back</a>  
+                                <a href="admin.php" name="submit" class="btn btn-outline-primary" text="center">login</button>               
+                                 <a href="module.php" name="submit" class="btn btn-outline-primary">Back</a>  
                     </td>
                 </tr>
                     </div>

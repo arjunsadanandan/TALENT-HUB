@@ -5,7 +5,7 @@
     <div class="sidebar-brand-icon rotate-n-15">
         <i class="fas fa-laugh-wink"></i>
     </div>
-    <div class="sidebar-brand-text mx-3">SB User <sup>2</sup></div>
+    <div class="sidebar-brand-text mx-3">SB college <sup>2</sup></div>
 </a>
 
 <!-- Divider -->
@@ -68,12 +68,16 @@
 </li>
 
 <!-- Nav Item - Charts -->
-
+<li class="nav-item">
+    <a class="nav-link" href="product.php">
+        <i class="fas fa-fw fa-chart-area"></i>
+        <span>Add Student</span></a>
+</li>
 </li>
 <li class="nav-item">
     <a class="nav-link" href="viewproduct.php">
         <i class="fas fa-fw fa-chart-area"></i>
-        <span>View Product</span></a>
+        <span>View Student</span></a>
 </li>
 <li class="nav-item">
     <a class="nav-link" href="product.php">
@@ -83,16 +87,36 @@
 <li class="nav-item">
     <a class="nav-link" href="department.php">
         <i class="fas fa-fw fa-chart-area"></i>
-        <span>By Product</span></a>
+        <span>View Product</span></a>
 </li>
-
 <li class="nav-item">
-    <a class="nav-link" href="viewproduct.php">
+    <a class="nav-link" href="addcategory.php">
         <i class="fas fa-fw fa-chart-area"></i>
-        <span>View All Work</span></a>
+        <span>View Approve Work</span></a>
+</li>
+<li class="nav-item">
+    <a class="nav-link" href="viewcategory.php">
+        <i class="fas fa-fw fa-chart-area"></i>
+        <span>Add College</span></a>
+</li>
+<li class="nav-item">
+    <a class="nav-link" href="viewcategory.php">
+        <i class="fas fa-fw fa-chart-area"></i>
+        <span>College View</span></a>
+</li>
+<li class="nav-item">
+    <a class="nav-link" href="viewcategory.php">
+        <i class="fas fa-fw fa-chart-area"></i>
+        <span>Add Department</span></a>
+</li>
+<li class="nav-item">
+    <a class="nav-link" href="viewcategory.php">
+        <i class="fas fa-fw fa-chart-area"></i>
+        <span>View Department</span></a>
+</li>
 <!-- Nav Item - Tables -->
 <li class="nav-item">
-    <a class="nav-link" href="viewnotification.php">
+    <a class="nav-link" href="register .php">
         <i class="fas fa-fw fa-table"></i>
         <span>View notification</span></a>
 </li>

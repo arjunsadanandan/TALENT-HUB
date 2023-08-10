@@ -251,7 +251,7 @@ $data= mysqli_query($con,"select * from category ");
                 <div class="container-fluid">
 
                     <!-- Page Heading -->
-                    <h1 class="h3 mb-1 text-gray-800">Student view</h1>
+                    <h1 class="h3 mb-1 text-gray-800">View Category</h1>
    
                     </div>
                         <div class="card-body">

@@ -1,9 +1,7 @@
 <?php
 include "talenthubconnect.php";
-$data=mysqli_query($con,"select * from college");
+$data= mysqli_query($con,"select * from college");
 ?>
-
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -15,7 +13,7 @@ $data=mysqli_query($con,"select * from college");
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>SB Admin 2 - Buttons</title>
+    <title>SB college - view work</title>
 
     <!-- Custom fonts for this template-->
     <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
@@ -34,11 +32,9 @@ $data=mysqli_query($con,"select * from college");
     <div id="wrapper">
 
         <!-- Sidebar -->
-    
-<?php
-include "sidebar.php";
-?>
-        
+        <?php
+        include "adminsidebar.php";
+        ?>
         <!-- End of Sidebar -->
 
         <!-- Content Wrapper -->
@@ -255,57 +251,60 @@ include "sidebar.php";
                 <div class="container-fluid">
 
                     <!-- Page Heading -->
-                    <h1 class="h3 mb-4 text-gray-800">View college</h1>
-
+                    <h1 class="h3 mb-1 text-gray-800">College view</h1>
+   
                     </div>
                         <div class="card-body">
                             <div class="table-responsive">
                                 <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                                     <thead>
                                         <tr>
-                                        <th>college</th>
-                                            <th>Action</th>
                                             
                                             
+                                            <th>College_name</th>
+                                            <th>Email</th>
+                                            <th>Mobile</th>
+                                          
+                                            <th>Place</th>
+                                            <th>status</th>
+                                            
+                                         
+                                           
                                         </tr>
                                     </thead>
                                     <tfoot>
-                                        <tr>
-                                       
-</tr>
-                                            <?php
-                                            while($row=mysqli_fetch_assoc($data)){
-                                                ?>
-<tr>
-                                                <td><?php echo$row['college_name']?></td>
-                                                
-                                                
-                                                <td><a href="students.php?id=<?php echo$row['college_name']?><?php echo$row['college_id']?>" name="submit" type="button" class="btn btn-outline-dark">view</a></td>
+                                            <tr>
+                                                <?php
+                                                while($row=mysqli_fetch_assoc($data)){
+                                                    ?>
+                                                <tr>
+                                                   
+                                                    <td><?php echo$row['college_name']?></td>
+                                                    <td><?php echo$row['email']?></td>
+                                                    <td><?php echo$row['mobile']?></td>
+                                                    <td><?php echo$row['Place']?></td>
+                                                    <td><a href="" name="submit" type="button" class="btn btn-outline-primary">Approve</a>
+                                                    <a href="" name="submit" type="button"class="btn btn-outline-primary">Reject</a></td>
                                                 </tr>
-                                               <?php
-                                            }
-                                            ?>
-                                           
-                                 
-                                    </tfoot>
-                                    <tbody>
-                                        <tr>
-                                            <td>
-                                                
-                                            </td>
-                                        </tr>
-                                        
+                                                    <?php
+                                                }
+                                                ?>
+                                            
                                     </tbody>
+                                    
                                 </table>
+                                
                             </div>
                         </div>
                     </div>
+                    <a href="admin.php" name="submit" class="btn btn-outline-primary">back</a>   
 
                 </div>
                 <!-- /.container-fluid -->
 
             </div>
             <!-- End of Main Content -->
+
 
 
 
